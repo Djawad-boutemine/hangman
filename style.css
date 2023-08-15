@@ -1,0 +1,72 @@
+/* color variables */
+:root {
+    --cl-text: #000000;
+    --cl-background: #e8f7e9;
+    --cl-primary: #5fc897;
+    --cl-secondary: #bee7e9;
+    --cl-accent: #38a0a3;
+}
+
+/* setting font  */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* setting back ground color  */
+body {
+    background-color: var(--cl-background);
+}
+
+/* styling the first page  */
+.first-page {
+    min-height: 10em;
+    height: 100svh;
+    text-align: center;
+    padding: 0 1em;
+}
+
+/* heading  */
+h1 {
+    padding: 1em;
+}
+
+/* content styling */
+.content {
+    height: 80%;
+    background-color: var(--cl-secondary);
+    padding: 1em;
+    border-radius: 20px;
+}
+
+/* introduction styling */
+.intro {
+    padding: 1em;
+    transform: translateY(2em);
+}
+
+/* caterories styling */
+.categories {
+    display: flex;
+    flex-flow: column nowrap;
+    gap : 1em ;
+    align-items: center;
+    transform: translateY(4em);
+}
+/* the buttons styling */
+.categories > button {
+    width: 80%;
+    height: 3em;
+    background-color: var(--cl-primary);
+    color : white; 
+    font-weight: bold;
+    border-radius: 5em;
+    border: none;
+}
+
+.main-page {
+    display: none;
+}
+
+.final-page {
+    display: none;
+}
