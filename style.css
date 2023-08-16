@@ -15,13 +15,14 @@
 /* setting back ground color  */
 body {
     background-color: var(--cl-background);
-    color : white ;
+    color: white;
     display: grid;
     justify-content: center;
 }
 
 /* styling the first page  */
 .first-page {
+    display: block;
     width: 380px;
     min-height: 850px;
     height: 100svh;
@@ -36,7 +37,7 @@ h1 {
 
 /* content styling */
 .content {
-    height: 80%;
+    height: 73%;
     background-color: var(--cl-secondary);
     padding: 1em;
     border-radius: 20px;
@@ -76,13 +77,227 @@ h1 {
     box-shadow: inset -2px -3px 4px 0 #5b297e;
     padding: 1em;
 }
+
+/* the icons inside the buttons */
 .categories img {
-    width : 2em ;
+    width: 2em;
     aspect-ratio: 1/1;
 }
 
+/* styling the main page */
 .main-page {
     display: none;
+    width: 380px;
+    min-height: 850px;
+    height: 100svh;
+    padding: 1em;
+}
+
+/* starting by the top bar */
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top .buttons button {
+    background-color: rgb(155, 151, 151);
+    border: none;
+    border-radius: 7px;
+    margin-left: 0.3em;
+}
+
+.top .buttons img {
+    width: 2em;
+    aspect-ratio: 1/1;
+    padding: 0.2em;
+}
+
+.back img {
+    scale: 2;
+}
+
+/* drawing the man  */
+.drawing-box {
+    width: 100%;
+    min-height: 23em;
+    box-shadow: 0 0 11px 1px #9446c875;
+    margin: 1em 0;
+    position: relative;
+}
+.drawing-box div {
+    transition: 0.5s  ;
+}
+/* the base */
+.base {
+    background-color: white;
+    width: 100px;
+    height: 4px;
+    bottom: 30px;
+    left: 50px;
+    position: absolute;
+    /* width: 0%; */
+}
+
+/* the vertical stand */
+.stand-v {
+    background-color: white;
+    height: 300px;
+    width: 4px;
+    bottom: 30px;
+    left: 100px;
+    /* height: 0%; */
+    position: absolute;
+}
+
+/* the horisantal stand */
+.stand-h {
+    background-color: white;
+    width: 130px;
+    height: 4px;
+    bottom: 330px;
+    left: 100px;
+    /* width: 0%; */
+    position: absolute;
+}
+
+/* the rope attanchement */
+.rope-attachment {
+    background-color: white;
+    height: 50px;
+    width: 4px;
+    bottom: 284px;
+    left: 230px;
+    position: absolute;
+    /* height: 0%; */
+}
+
+/* the rope  */
+.rope {
+    border: 4px dashed white;
+    border-radius: 50%;
+    height: 80px;
+    aspect-ratio: 1/1;
+    bottom: 205px;
+    left: 193px;
+    /* opacity: 0; */
+    position: absolute;
+}
+/* the head */
+.head {
+    background-color: white;
+    border-radius: 50%;
+    height: 50px;
+    aspect-ratio: 1/1;
+    bottom: 220px;
+    left: 208px;
+    position: absolute;
+    /* opacity: 0; */
+}
+/* the body  */
+.body {
+    background-color: white;
+    height: 111px;
+    width: 4px;
+    bottom: 110px;
+    left: 230px;
+    /* height: 0%; */
+    position: absolute;
+}
+/* the rigth hand  */
+.hand-r {
+    background-color: white;
+    height: 60px;
+    width: 4px;
+    bottom: 139px;
+    left: 250px;
+    position: absolute;
+    /* height: 0%; */
+    transform: rotate(-45deg);
+}
+/* the left hand  */
+.hand-l {
+    background-color: white;
+    height: 60px;
+    width: 4px;
+    bottom: 137px;
+    left: 208px;
+    position: absolute;
+    /* height: 0%; */
+    transform: rotate(45deg);
+}
+/* the rigth leg  */
+.leg-r {
+    background-color: white;
+    height: 60px;
+    width: 4px;
+    bottom: 60px;
+    left: 250px;
+    position: absolute;
+    /* height: 0%; */
+    transform: rotate(-45deg);
+}
+/* the left leg  */
+.leg-l {
+    background-color: white;
+    height: 60px;
+    width: 4px;
+    bottom: 60px;
+    left: 208px;
+    position: absolute;
+    /* height: 0%; */
+    transform: rotate(45deg);
+}
+/* styling the words input */
+.wanted-word {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 0 0.7em 0;
+}
+.wanted-word > span {
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wanted-word span span {
+    display: inline-block;
+    width: 1.5em;
+    aspect-ratio: 1/1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    background-color: black;
+    margin: 0.1em;
+    border-bottom: 2px solid var(--cl-accent) ;
+    text-transform: capitalize;
+}
+/* styling the key board */
+.key-board {
+
+}
+.key-board > span {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em 0;
+}
+.key-board span button {
+    border: none;
+    background-color: var(--cl-accent);
+    color : white ;
+    width: 1.9em;
+    border-radius: 5px;
+    aspect-ratio: 1/1.2;
+    margin: 0.1em;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: capitalize;
+
 }
 
 .final-page {
