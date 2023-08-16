@@ -91,16 +91,18 @@ h1 {
     min-height: 850px;
     height: 100svh;
     padding: 1em;
+    position: relative;
 }
 
 /* starting by the top bar */
 .top {
     display: flex;
     justify-content: space-between;
+    padding: 0.3em 0.7em;
 }
 
 .top .buttons button {
-    background-color: rgb(155, 151, 151);
+    background-color: #cecdcd;
     border: none;
     border-radius: 7px;
     margin-left: 0.3em;
@@ -118,10 +120,10 @@ h1 {
 
 /* drawing the man  */
 .drawing-box {
-    width: 100%;
+    width: 90%;
     min-height: 23em;
     box-shadow: 0 0 11px 1px #9446c875;
-    margin: 1em 0;
+    margin: 1em auto;
     position: relative;
 }
 .drawing-box div {
@@ -135,7 +137,7 @@ h1 {
     bottom: 30px;
     left: 50px;
     position: absolute;
-    /* width: 0%; */
+    width: 0%;
 }
 
 /* the vertical stand */
@@ -145,7 +147,7 @@ h1 {
     width: 4px;
     bottom: 30px;
     left: 100px;
-    /* height: 0%; */
+    height: 0%;
     position: absolute;
 }
 
@@ -156,7 +158,7 @@ h1 {
     height: 4px;
     bottom: 330px;
     left: 100px;
-    /* width: 0%; */
+    width: 0%;
     position: absolute;
 }
 
@@ -168,7 +170,7 @@ h1 {
     bottom: 284px;
     left: 230px;
     position: absolute;
-    /* height: 0%; */
+    height: 0%;
 }
 
 /* the rope  */
@@ -179,7 +181,7 @@ h1 {
     aspect-ratio: 1/1;
     bottom: 205px;
     left: 193px;
-    /* opacity: 0; */
+    opacity: 0;
     position: absolute;
 }
 /* the head */
@@ -191,7 +193,7 @@ h1 {
     bottom: 220px;
     left: 208px;
     position: absolute;
-    /* opacity: 0; */
+    opacity: 0;
 }
 /* the body  */
 .body {
@@ -200,7 +202,7 @@ h1 {
     width: 4px;
     bottom: 110px;
     left: 230px;
-    /* height: 0%; */
+    height: 0%;
     position: absolute;
 }
 /* the rigth hand  */
@@ -211,7 +213,7 @@ h1 {
     bottom: 139px;
     left: 250px;
     position: absolute;
-    /* height: 0%; */
+    height: 0%;
     transform: rotate(-45deg);
 }
 /* the left hand  */
@@ -222,7 +224,7 @@ h1 {
     bottom: 137px;
     left: 208px;
     position: absolute;
-    /* height: 0%; */
+    height: 0%;
     transform: rotate(45deg);
 }
 /* the rigth leg  */
@@ -233,7 +235,7 @@ h1 {
     bottom: 60px;
     left: 250px;
     position: absolute;
-    /* height: 0%; */
+    height: 0%;
     transform: rotate(-45deg);
 }
 /* the left leg  */
@@ -244,7 +246,7 @@ h1 {
     bottom: 60px;
     left: 208px;
     position: absolute;
-    /* height: 0%; */
+    height: 0%;
     transform: rotate(45deg);
 }
 /* styling the words input */
@@ -255,6 +257,7 @@ h1 {
     align-items: center;
     flex-wrap: wrap;
     padding: 0 0 0.7em 0;
+    height: 8em;
 }
 .wanted-word > span {
     display: block;
@@ -276,9 +279,7 @@ h1 {
     text-transform: capitalize;
 }
 /* styling the key board */
-.key-board {
 
-}
 .key-board > span {
     display: block;
     display: flex;
@@ -299,7 +300,60 @@ h1 {
     text-transform: capitalize;
 
 }
-
+.final-page::after {
+    content: "";
+    width: 100%;
+    height: 150%;
+    background-color: #00000082;
+    position: absolute;
+    display: block;
+    bottom: -150%;
+}
+.final-page::before{
+    content: "";
+    width: 100%;
+    height: 150%;
+    background-color: #00000082;
+    position: absolute;
+    display: block;
+    top : -150% ;
+}
 .final-page {
     display: none;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    top : 50% ;
+    left : 50% ;
+    transform: translate(-50%,-50%);
+    background-color: var(--cl-secondary);
+    box-shadow: 0px 1px 20px 9px #9446c8e3;
+}
+.result {
+    font-size: 2rem;
+    padding-top: 1em;
+}
+.green {
+    color : #24cf69;
+}
+.red {
+    color : #ff4949;
+}
+.message {
+    font-size: 1.3rem;
+}
+.final-page .buttons button {
+    background-color: #cecdcd;
+    border: none;
+    border-radius: 7px;
+    margin-left: 0.3em;
+}
+
+.final-page .buttons img {
+    width: 2em;
+    aspect-ratio: 1/1;
+    padding: 0.2em;
 }
