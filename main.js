@@ -31,7 +31,8 @@ function again() {
     legs[1].style.height = "0";
     //fetcking a new word
     wordPlace.innerHTML = "";
-    chosenWord = Array.from(categories[chosenCategory][Math.floor(Math.random() * categories[chosenCategory].length)]);
+    chosenWordHold = (categories[chosenCategory][Math.floor(Math.random() * categories[chosenCategory].length)]);
+    chosenWord = Array.from(chosenWordHold);
     // pending the chosenWord to it propriate place
     let bigSpan = document.createElement("span");
     chosenWord.forEach(function (ele) {
@@ -69,15 +70,121 @@ let mainPage = document.querySelector(".main-page");
 let finalPage = document.querySelector(".final-page");
 // the content main object
 let categories = {
-    languages: ["c charp"],
-    people: ["elzero web"],
-    countries: ["canada"],
-    food: ["pizza"],
-    components: ["ram"],
+    languages: [
+        "python",
+        "ruby",
+        "swift",
+        "kotlin",
+        "groovy",
+        "scheme",
+        "racket",
+        "elixir",
+        "nim",
+        "rust",
+        "css",
+        "perl",
+        "prolog",
+        "html",
+        "java",
+        "tcl",
+        "basic",
+        "julia",
+        "small talk",
+        "java script",
+        "pascal"
+    ],
+    people: [
+        "einstein",
+        "newton",
+        "curie",
+        "tesla",
+        "darwin",
+        "hawking",
+        "turing",
+        "wright",
+        "bohr",
+        "mendel",
+        "hertz",
+        "galilei",
+        "kepler",
+        "pasteur",
+        "nobel",
+        "fermi",
+        "planck",
+        "lovelace",
+        "davinci",
+        "faraday"
+    ],
+    countries: [
+        "france",
+        "germany",
+        "italy",
+        "japan",
+        "spain",
+        "brazil",
+        "india",
+        "canada",
+        "russia",
+        "mexico",
+        "greece",
+        "sweden",
+        "chile",
+        "belize",
+        "cyprus",
+        "denmark",
+        "estonia",
+        "finland",
+        "iceland",
+        "jamaica"
+    ],
+    food: [
+        "pizza",
+        "sushi",
+        "burger",
+        "salad",
+        "cookie",
+        "banana",
+        "orange",
+        "apple",
+        "cheese",
+        "tomato",
+        "carrot",
+        "grapes",
+        "peanut",
+        "pasta",
+        "bread",
+        "steak",
+        "bacon",
+        "shrimp",
+        "onion",
+        "yogurt"
+    ],
+    components: [
+        "cpu",
+        "gpu",
+        "ram",
+        "ssd",
+        "hdd",
+        "psu",
+        "case",
+        "fan",
+        "usb",
+        "ethernet",
+        "wifi",
+        "audio",
+        "mouse",
+        "keyboard",
+        "monitor",
+        "printer",
+        "scanner",
+        "hub",
+        "modem",
+        "router"],
 }
 // vars to choose the word
 let chosenCategory;
 let chosenWord;
+let chosenWordHold;
 let categoriesBtns = document.querySelectorAll(".categories button");
 // vars to set the word in its place
 let wordPlace = document.querySelector(".wanted-word");
@@ -129,6 +236,7 @@ let mistakes = 0;
 // getting the result span and the message span 
 let result = document.querySelector(".result");
 let message = document.querySelector(".message");
+let messageSpan = document.querySelector(".message span");
 // wright sould 
 let sound = document.querySelector(".succed");
 // the logic of the game
@@ -154,16 +262,16 @@ keyBoardKeys.forEach(function (ele) {
         }
         switch (mistakes) {
             case 1:
-                base.style.width = "100px";
+                base.style.width = "70px";
                 break;
             case 2:
-                standV.style.height = "300px";
+                standV.style.height = "210px";
                 break;
             case 3:
-                standH.style.width = "130px";
+                standH.style.width = "79px";
                 break;
             case 4:
-                ropeAttachment.style.height = "50px";
+                ropeAttachment.style.height = "40px";
                 break;
             case 5:
                 rope.style.opacity = "1";
@@ -172,19 +280,19 @@ keyBoardKeys.forEach(function (ele) {
                 head.style.opacity = "1";
                 break;
             case 7:
-                body.style.height = "111px";
+                body.style.height = "79px";
                 break;
             case 8:
-                hands[0].style.height = "60px";
-                hands[1].style.height = "60px";
+                hands[0].style.height = "45px";
+                hands[1].style.height = "45px";
                 break;
             case 9:
-                legs[0].style.height = "60px";
-                legs[1].style.height = "60px";
+                legs[0].style.height = "45px";
+                legs[1].style.height = "45px";
                 togglePage("final");
                 result.innerHTML = "Game Over"
+                messageSpan.innerHTML = chosenWordHold;
                 result.classList.add("red");
-                message.innerHTML = "The Man Is DEAD "
                 break;
         }
         // setting the winning state
