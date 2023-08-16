@@ -1,10 +1,10 @@
 /* color variables */
 :root {
-    --cl-text: #000000;
-    --cl-background: #e8f7e9;
-    --cl-primary: #5fc897;
-    --cl-secondary: #bee7e9;
-    --cl-accent: #38a0a3;
+    --cl-text: #faf7fd;
+    --cl-background: #190b23;
+    --cl-primary: #9f5ace;
+    --cl-secondary: #250f33;
+    --cl-accent: #9446c8;
 }
 
 /* setting font  */
@@ -15,11 +15,15 @@
 /* setting back ground color  */
 body {
     background-color: var(--cl-background);
+    color : white ;
+    display: grid;
+    justify-content: center;
 }
 
 /* styling the first page  */
 .first-page {
-    min-height: 10em;
+    width: 380px;
+    min-height: 850px;
     height: 100svh;
     text-align: center;
     padding: 0 1em;
@@ -36,11 +40,13 @@ h1 {
     background-color: var(--cl-secondary);
     padding: 1em;
     border-radius: 20px;
+    box-shadow: 0 0 11px 1px #9446c875;
 }
 
 /* introduction styling */
 .intro {
-    padding: 1em;
+    /* padding: 1em; */
+    font-size: 1.1em;
     transform: translateY(2em);
 }
 
@@ -48,19 +54,31 @@ h1 {
 .categories {
     display: flex;
     flex-flow: column nowrap;
-    gap : 1em ;
+    margin-top: 0.5em;
+    gap: 1.2em;
     align-items: center;
     transform: translateY(4em);
 }
+
 /* the buttons styling */
-.categories > button {
-    width: 80%;
-    height: 3em;
+.categories>button {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 85%;
+    height: 3.8em;
     background-color: var(--cl-primary);
-    color : white; 
+    color: white;
     font-weight: bold;
-    border-radius: 5em;
+    border-radius: 1em;
     border: none;
+    box-shadow: inset -2px -3px 4px 0 #5b297e;
+    padding: 1em;
+}
+.categories img {
+    width : 2em ;
+    aspect-ratio: 1/1;
 }
 
 .main-page {
