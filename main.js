@@ -59,6 +59,8 @@ function again() {
     mistakes = 0;
     // resting the colors of the result
     result.className = "result";
+    messageSpan.innerHTML = "";
+    empty = false;
 }
 // back to first page function
 function back() {
@@ -89,12 +91,10 @@ let categories = {
         "tcl",
         "basic",
         "julia",
-        "small talk",
-        "java script",
         "pascal"
     ],
     people: [
-        "einstein",
+        "albert",
         "newton",
         "curie",
         "tesla",
@@ -111,7 +111,6 @@ let categories = {
         "nobel",
         "fermi",
         "planck",
-        "lovelace",
         "davinci",
         "faraday"
     ],
@@ -169,11 +168,9 @@ let categories = {
         "case",
         "fan",
         "usb",
-        "ethernet",
         "wifi",
         "audio",
         "mouse",
-        "keyboard",
         "monitor",
         "printer",
         "scanner",
@@ -290,7 +287,10 @@ keyBoardKeys.forEach(function (ele) {
                 legs[0].style.height = "45px";
                 legs[1].style.height = "45px";
                 togglePage("final");
-                result.innerHTML = "Game Over"
+                result.innerHTML = "Game Over";
+                message.innerHTML = "The Word Was : ";
+                message.appendChild(document.createElement("span"));
+                messageSpan = document.querySelector(".message span");
                 messageSpan.innerHTML = chosenWordHold;
                 result.classList.add("red");
                 break;
